@@ -1,0 +1,149 @@
+
+.nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 60px;
+    background-color: rgba(52, 73, 94, 0.85); /* Semi-transparent background color */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+.glau{
+    font-size: x-large;
+    color: white;
+    padding: 10px;
+}
+.nav .item {
+    display: flex;
+    column-gap: 35px;
+    background-color: transparent;
+}
+
+.nav .item a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: all 0.5s ease-in;
+    margin-right: 20px;
+    padding: 10px; 
+}
+
+.nav .item a:hover {
+    border-bottom: 2px solid black;
+    background-color: #26cdef; 
+}
+
+.nav .btn {
+    column-gap: 20px;
+    display: flex;
+}
+
+.login_reg{
+    padding: 8px 25px;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    border: 1px solid;
+    background: #34495e;
+    text-decoration: none;
+    color: white;
+    margin-right: 5px;
+}
+
+/* Right half-screen panel */
+.nav-panel {
+    display: none;
+    position: fixed;
+    top: 10px; 
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-image: linear-gradient(to right top, #7a36e0, #4c00b7, #25008c, #000061, #00002c);
+    padding: 20px;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: 10px; /* Rounded corners for a softer look */
+}
+
+.nav-panel.show {
+    transform: translateX(0);
+}
+
+.nav-panel a {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-panel a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 33px;
+    height: 29px;
+    cursor: pointer;
+    margin-left: 23px;
+    margin-right: 10px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.change .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .nav .item {
+        display: none; 
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .nav .item.show {
+        display: flex;
+        background-color: rgb(164, 146, 251);
+    }
+
+    .hamburger-menu {
+        display: flex; 
+    }
+}
+@media only screen and (min-width: 769px) {
+    .hamburger-menu {
+        display: none;
+    }
+}

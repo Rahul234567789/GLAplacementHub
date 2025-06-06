@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/nav.css">
+    <style>
+        /* Container styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Profile info styles */
+        .profile-info {
+            margin-top: 20px;
+        }
+
+        .profile-info p {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .profile-info p:hover {
+            color: #f39c12;
+        }
+
+        /* Edit profile link styles */
+         .edit {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<%- include("partials/nav") -%>
+
+<!-- Main Content -->
+<div class="container">
+    <h1 style="text-align: center; color: #2ecc71;">User Profile</h1>
+    <div class="profile-info">
+        <p><strong>Username:</strong> <%= user.username %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+    </div>
+    <a class="edit" href="/edit-profile">Edit Profile</a>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+
+.top {
+    padding: 8px;
+    background-color: rgba(10, 48, 255, 0.6);
+}
+
+.top .txt {
+    color: white;
+    font-size: 20px;
+}
+
+
+
+.home {
+    background-color: lightcyan;
+    
+    background-size: cover;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 70px;
+}
+
+.home .main-box .left {
+    width: 45vw;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    color: white;
+}
+
+.home .main-box .left button {
+    padding: 10px 30px;
+    border: none;
+    background: #00a300e3;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    width: fit-content;
+    cursor: pointer;
+    margin-left: 10rem;
+}
+
+.home .main-box .left h1 {
+    font-size: 66px;
+    padding-left: 30px;
+}
+
+.home .main-box .right img {
+    width: 500px;
+    padding-right: 50px;
+}
+
+
+.depar {
+    padding: 40px;
+  background-color: white;
+  background-image: url(bg1.jpg);
+  background-size: cover;
+}
+
+.depar .txt {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.depar .main-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.depar .main-box .box {
+    
+    background-color: rgba(255, 255, 255, 0.50); backdrop-filter: blur(10px);
+    width: 200px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    margin: 13px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.depar .main-box .box:hover {
+    margin-top: -0px;
+}
+
+.depar .main-box .box img {
+    transition: all 0.4s ease-in-out;
+    padding-left: 37px;
+}
+
+.depar .main-box .box p {
+    transition: all 0.4s ease-in-out;
+}
+
+.depar .main-box .box p:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.depar .main-box .box img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.depar .main-box .box .de-name {
+    font-size: 26px;
+    padding-top: 15px;
+    color: darkgoldenrod;
+}
+
+/* Styles for the Courses section */
+.courses {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-card {
+    width: calc(25% - 20px); /* 4 cards per row, adjust for gap */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Added margin between cards */
+    margin-top: 20px;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.course-info {
+    padding: 20px;
+}
+
+.course-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.course-info p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1024px) {
+    .course-card {
+        width: calc(33.33% - 20px); /* 3 cards per row for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .course-card {
+        width: calc(50% - 20px); /* 2 cards per row for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .course-card {
+        width: calc(100% - 20px); /* 1 card per row for extra small screens */
+    }
+}
+
+
+
+
+/* For screens smaller than 768px (tablets and below) */
+@media (max-width: 768px) {
+    .home .main-box {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; 
+    }
+
+    .home .main-box .left,
+    .home .main-box .right {
+        width: 100%;
+    }
+
+    .home .main-box .right {
+        margin-top: 20px; 
+    }
+}
+

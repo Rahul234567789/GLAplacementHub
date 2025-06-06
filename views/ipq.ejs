@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .subjects-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .subjects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+            width: 100%;
+            min-height: 20vh;  
+        }
+
+        .subject-card {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #41C9E2;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 200px; 
+            text-align: center;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .subject-card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <%- include("partials/nav") %>
+    
+    <div class="subjects-container">
+        <div class="subjects">
+            <a href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/" class="subject-card">
+                <h2>DSA</h2>
+            </a>
+            <a href="https://www.wscubetech.com/blog/wp-content/uploads/2023/11/DBMS-Questions-and-Answers.pdf" class="subject-card">
+                <h2>DBMS</h2>
+            </a>
+            <a href="https://www.simplilearn.com/computer-networks-interview-questions-article" class="subject-card">
+                <h2>Computer Network</h2>
+            </a>
+            <a href="https://prepinsta.com/interview-preparation/technical-interview-questions/os/" class="subject-card">
+                <h2>Operating System</h2>
+            </a>
+            <a href="https://www.webcodegeeks.com/wp-content/uploads/2016/05/Web-Developer-Interview-Questions.pdf" class="subject-card">
+                <h2>Web Development</h2>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body> 
+</html>

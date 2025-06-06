@@ -1,0 +1,133 @@
+.nav {
+    position: fixed; 
+    top: 0; 
+    background-color: #34495e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%; 
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1rem;
+}
+
+.item {
+    display: flex;
+}
+
+.item a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.item a:hover {
+    color: #2ecc71;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .item {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        background-color: #fff;
+        height: 3px;
+        width: 25px;
+        margin: 5px;
+    }
+}
+
+/* Center logo when screen is small */
+@media only screen and (max-width: 768px) {
+    
+    .nav {
+        justify-content: center; 
+    }
+
+    .logo {
+        order: 1; 
+        margin-right: auto; 
+        margin-left: auto; 
+    }
+
+    .item {
+        display: none; 
+    }
+}
+
+
+
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide the sidebar by moving it off the screen */
+    width: 250px;
+    height: 100%;
+    background-color: #1a242f;
+    z-index: 1000; 
+    transition: left 0.3s ease;
+}
+
+.open {
+    left: 0; /* Move the sidebar to the left to make it visible */
+}
+
+.sidebar-nav {
+    list-style-type: none;
+    padding: 75px;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+    display: none; 
+}
+
+.overlay.open {
+    display: block;
+}
+
+/* Close button styles */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    font-size: 80px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white; 
+}

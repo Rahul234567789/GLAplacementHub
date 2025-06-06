@@ -1,0 +1,164 @@
+<!-- views/first_year.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Year Notes</title>
+    <!-- Add any additional CSS or external libraries if needed -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/nav.css">
+    <style>
+        /* Custom CSS for styling */
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            
+            background-size: cover;
+            min-height: 50vh;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        span h1 {
+            border: 2px solid black;
+            background-color: bisque;
+        }
+
+        .note-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .note-box {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #41C9E2;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 200px;
+            text-align: center;
+        }
+
+        .note-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .note-box h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .note-box a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #207674;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .note-box a:hover {
+            background-color: #0984e3;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Navigation Bar -->
+ <%- include("partials/nav") -%>
+
+    <!-- Main Content -->
+    <div class="container">
+        <span>
+            <h1>2nd Year Notes</h1>
+        </span>
+
+        <div class="note-boxes">
+            <div class="note-box">
+                <h2>OOPs</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+
+                <script>
+                    function openPdfPopup(pdfPath) {
+                        // Calculate the position for the popup window to be centered
+                        var screenWidth = window.screen.width;
+                        var screenHeight = window.screen.height;
+                        var popupWidth = 800;
+                        var popupHeight = 600;
+                        var left = (screenWidth - popupWidth) / 2;
+                        var top = (screenHeight - popupHeight) / 2;
+            
+                        // Open a new window with the PDF
+                        var pdfWindow = window.open(pdfPath, '_blank', 'width=' + popupWidth + ', height=' + popupHeight + ', left=' + left + ', top=' + top);
+                        if (!pdfWindow || pdfWindow.closed || typeof pdfWindow.closed == 'undefined') {
+                            alert('Please allow popups for this site.'); // Alert if the window was blocked
+                        }
+                        return false; // Prevent default link behavior
+                    }
+                </script>
+            </div>
+
+            <div class="note-box">
+                <h2>DSA</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>COMPUTER NETWORKS</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>OPERATING SYSTEMS</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>SOFTWARE ENGINEERING</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>COMPUTER ORGANIZATION</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>ENGINEERING MATHEMATICS III</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>INTRO TO MICRO</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>DATABASE MANAGEMENT SYSTEM</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            <div class="note-box">
+                <h2>DISCRETE MATHEMATICS</h2>
+                <a href="#" onclick="openPdfPopup('DSA_QUES_SHEET.pdf')">Open PDF</a>
+            </div>
+
+            
+
+        </div>
+    </div>
+
+    <script src="/script.js"></script> <!-- Include your JavaScript file -->
+</body>
+</html>

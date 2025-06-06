@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="nav.css">
+    <title>GLAU</title>
+    <style>
+        .login-link {
+            padding: 8px 25px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            border: 1px solid;
+            background: #34495e;
+            text-decoration: none;
+            margin-right: 5px;
+        }
+
+        .login-link:hover {
+            background-color: #0984e3;
+        }
+
+        /* Navigation bar styles */
+        .nav {
+            background-color: #2c3e50;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            flex: 1;
+        }
+
+        .item {
+            display: flex;
+        }
+
+        .item a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .username {
+            cursor: pointer;
+        }
+
+        /* Slide window styles */
+        .slide-window {
+            position: absolute;
+            top: 40px; /* Adjust based on the height of the nav bar */
+            right: 0;
+            width: 200px;
+            height: auto;
+            background-color: #ff6b6b;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .slide-window.open {
+            display: flex;
+        }
+
+        /* Close button styles */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 5px 10px;
+            background-color: #ffffff;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-btn i {
+            color: #ff6b6b;
+        }
+
+        .profile-link,
+        .logout-link {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .profile-link:hover,
+        .logout-link:hover {
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1 class="glau" style="color: orange;">GLAUPlacementHub</h1>
+        </div>
+        <div class="item">
+            <a href="/">Home</a>
+            <a href="/ipq">Material</a>
+            <a href="/contribute">Contribute</a>
+            <a href="/engineering">Engineering</a>
+            <!-- Add more links for other departments -->
+        </div>
+        <div class="btn">
+            <% if (user) { %>
+            <span id="username" class="username">
+                <%= user.username %>
+            </span>
+            <div class="slide-window" id="slideWindow">
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <a href="/profile" class="profile-link">Profile</a>
+                <a href="/logout" class="logout-link">Logout</a>
+            </div>
+            <% } else { %>
+            <a href="/login" class="login-link">Login</a>
+            <% } %>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const closeBtn = document.querySelector('.close-btn');
+            const username = document.getElementById('username');
+            const slideWindow = document.getElementById('slideWindow');
+
+            if (username && slideWindow) {
+                username.addEventListener('click', function () {
+                    slideWindow.classList.toggle('open');
+                });
+            }
+
+            // Function to close the slide window
+            const closeSlideWindow = () => {
+                slideWindow.classList.remove('open');
+            };
+
+            // Event listener for the close button
+            closeBtn.addEventListener('click', closeSlideWindow);
+        });
+    </script>
+</body>
+</html>

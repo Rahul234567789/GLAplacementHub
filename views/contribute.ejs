@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute</title>
+    <link rel="stylesheet" href="contribute.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <%- include("partials/nav") -%>
+
+    <div class="container">
+        <h1>Contribute</h1>
+        <% if (!user) { %>
+            <input type="hidden" id="loggedIn" value="false">
+        <% } else { %>
+            <input type="hidden" id="loggedIn" value="true">
+        <% } %>
+        <form id="contributeForm" action="/contribute" method="POST" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic" required>
+            </div>
+            <div class="form-group">
+                <label for="pdfFile">Upload PDF File:</label>
+                <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required>
+            </div>
+            <button type="submit">Contribute</button>
+        </form>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Perform the form submission with AJAX or fetch
+            const form = document.getElementById('contributeForm');
+            const formData = new FormData(form);
+
+            fetch('/contribute', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    alert('Your response has been submitted.');
+                    form.reset(); // Optional: reset the form after submission
+                } else {
+                    alert('There was an error submitting your response.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your response.');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
